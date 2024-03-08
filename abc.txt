@@ -39,3 +39,27 @@
 - **Node.js**: Crafted Node.js scripts to automate various stages of the CI/CD pipeline, such as testing and deployment tasks, improving efficiency and reliability of the deployment process.
 - **Docker**: Leveraged Docker to containerize Node.js applications, simplifying the CI/CD process by ensuring consistency across all stages of development and deployment.
 - **ELK Stack**: Set up ELK for logging and monitoring of the CI/CD pipeline, providing real-time feedback and enabling quick detection and resolution of issues.
+
+### Project: Insurance Management System with Endorsement Options
+
+**Description**: Led the development of a comprehensive insurance management system designed to streamline the creation, management, and endorsement of insurance policies. The system aimed to enhance customer experience through seamless policy customization and improve operational efficiency.
+
+**Responsibilities**:
+- Developed a robust microservices architecture to handle various insurance products and their lifecycle, including policy issuance, management, and endorsements.
+- Implemented an automated deployment pipeline using Kubernetes, ensuring high availability and scalability of the system.
+- Integrated the ELK Stack for monitoring and analyzing system logs, ensuring timely insights into operations and user activities, particularly focusing on endorsement processes.
+
+**Contributions**:
+- **Node.js**: Utilized Node.js to develop scalable and efficient services for managing insurance policies and processing endorsement requests, ensuring high performance and responsiveness.
+  - Developed APIs for creating, updating, and retrieving insurance policies, including complex endorsement options.
+  - Implemented real-time notification services to alert customers and administrators about endorsement status and approvals.
+  - Ensured secure handling of sensitive customer information and policy data through encryption and secure APIs.
+- **Docker**: Containerized the Node.js applications and services, facilitating easy deployment and scaling across different environments.
+  - Created Docker images for each microservice, streamlining the development, testing, and production workflows.
+  - Utilized Docker Compose for local development and testing, simulating the production environment and reducing deployment errors.
+- **Kubernetes**: Orchestrated the deployment and management of containerized applications, enhancing system resilience and scalability.
+  - Configured auto-scaling policies based on system load, ensuring optimal performance during peak times.
+  - Implemented rolling updates and rollbacks for zero-downtime deployments, maintaining system availability during updates.
+- **ELK Stack**: Set up Elasticsearch, Logstash, and Kibana for comprehensive logging, monitoring, and visualization of operational data.
+  - Customized Logstash pipelines to parse and index logs from various services, enabling efficient log management and searchability.
+  - Utilized Kibana dashboards to monitor real-time data on policy endorsements, user interactions, and system performance, facilitating quick decision-making and issue resolution.
