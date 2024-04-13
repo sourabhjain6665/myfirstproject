@@ -1,0 +1,164 @@
+Junior Programmer (1-4 years of experience)
+
+Level 1: Coding Test (30 minutes)
+Problem: Implement a function that takes an array of integers as input and returns the maximum difference between any two elements in the array.
+
+Sample Input:
+
+javascript
+Copy code
+const nums = [7, 1, 5, 3, 6, 4];
+Sample Output:
+
+javascript
+Copy code
+console.log(maxDifference(nums)); // Output: 5 (Difference between 7 and 1, or 6 and 1)
+Solution:
+
+javascript
+Copy code
+function maxDifference(nums) {
+    if (!nums || nums.length < 2) {
+        return 0;
+    }
+    
+    let minNum = nums[0];
+    let maxDiff = 0;
+    
+    for (let i = 1; i < nums.length; i++) {
+        maxDiff = Math.max(maxDiff, nums[i] - minNum);
+        minNum = Math.min(minNum, nums[i]);
+    }
+    
+    return maxDiff;
+}
+Level 2: Conceptual Questions (10 minutes)
+
+MongoDB:
+What is MongoDB, and how does it differ from traditional relational databases?
+Explain the concept of collections and documents in MongoDB.
+How do you perform CRUD operations in MongoDB?
+Level 3: Framework-Specific Questions (10 minutes)
+
+Express.js:
+What is Express.js, and how does it fit into the MEAN/MERN stack?
+Explain middleware in Express.js and provide examples of middleware functions.
+How do you handle routing in Express.js?
+Level 4: Frontend Framework and Node.js Questions (5 minutes)
+
+Angular/React:
+Describe the key features of Angular/React.
+How do you manage state in Angular/React applications?
+Provide examples of component-based architecture in Angular/React.
+Node.js:
+What is Node.js, and how does it support server-side development in the MEAN/MERN stack?
+How do you handle asynchronous operations in Node.js?
+Explain the event-driven architecture of Node.js.
+Mid-Level Programmer (4-7 years of experience)
+
+Level 1: Coding Test (30 minutes)
+Problem: Implement a function that takes a string representing a sentence as input and returns the most frequent word in the sentence.
+
+Sample Input:
+
+javascript
+Copy code
+const sentence = "the quick brown fox jumps over the lazy dog";
+Sample Output:
+
+javascript
+Copy code
+console.log(mostFrequentWord(sentence)); // Output: "the" (Appears most frequently in the sentence)
+Solution:
+
+javascript
+Copy code
+function mostFrequentWord(sentence) {
+    const words = sentence.toLowerCase().match(/\b\w+\b/g);
+    const wordCounts = {};
+    
+    words.forEach(word => {
+        wordCounts[word] = (wordCounts[word] || 0) + 1;
+    });
+    
+    let maxCount = 0;
+    let mostFrequentWord = '';
+    
+    for (const word in wordCounts) {
+        if (wordCounts[word] > maxCount) {
+            maxCount = wordCounts[word];
+            mostFrequentWord = word;
+        }
+    }
+    
+    return mostFrequentWord;
+}
+Level 2: Conceptual and Framework-Specific Questions (15 minutes)
+
+MongoDB, Express.js, Angular/React, Node.js:
+Mastery of concepts, including advanced topics, best practices, and architectural considerations.
+Level 3: Deployment and Optimization Questions (5 minutes)
+
+Deployment:
+Strategies for deploying and scaling MEAN/MERN applications in production environments.
+Optimization:
+Techniques for optimizing performance and improving scalability of MEAN/MERN applications.
+Senior Programmer (7+ years of experience)
+
+Level 1: Coding Test (30 minutes)
+Problem: Implement a function that takes a string representing a mathematical expression as input and evaluates it.
+
+Sample Input:
+
+javascript
+Copy code
+const expression = "3 + 4 * 2 - ( 5 * 2 )";
+Sample Output:
+
+javascript
+Copy code
+console.log(evaluateExpression(expression)); // Output: 5 (Result of evaluating the expression)
+Solution:
+
+javascript
+Copy code
+function evaluateExpression(expression) {
+    const stack = [];
+    const operators = new Set(['+', '-', '*', '/']);
+    
+    const evaluateOperator = (operator, operand2, operand1) => {
+        switch (operator) {
+            case '+':
+                return operand1 + operand2;
+            case '-':
+                return operand1 - operand2;
+            case '*':
+                return operand1 * operand2;
+            case '/':
+                return operand1 / operand2;
+        }
+    };
+    
+    expression.split(' ').forEach(token => {
+        if (!operators.has(token)) {
+            stack.push(parseFloat(token));
+        } else {
+            const operand2 = stack.pop();
+            const operand1 = stack.pop();
+            stack.push(evaluateOperator(token, operand2, operand1));
+        }
+    });
+    
+    return stack.pop();
+}
+Level 2: Conceptual, Framework-Specific, and Deployment/Optimization Questions (25 minutes)
+
+MongoDB, Express.js, Angular/React, Node.js:
+Mastery of concepts, including advanced topics, best practices, and architectural considerations.
+Deployment and Optimization:
+Extensive knowledge of deployment strategies, scalability, performance optimization, and cloud services.
+Level 3: Additional Skills and Contributions (5 minutes)
+
+Version Control, Cloud Services, Community Contributions:
+Demonstrated experience with advanced skills and contributions to the MEAN/MERN community.
+This structured approach provides a comprehensive assessment of candidates' skills and experience levels across different aspects of MEAN/MERN stack development.
