@@ -3,14 +3,16 @@ function maxDifference(scores) {
         return null;
     }
 
+    let minScore = scores[0];
     let maxDiff = 0;
 
-    for (let i = 0; i < scores.length; i++) {
-        for (let j = i + 1; j < scores.length; j++) {
-            const diff = Math.abs(scores[j] - scores[i]);
-            if (diff > maxDiff) {
-                maxDiff = diff;
-            }
+    for (let i = 1; i < scores.length; i++) {
+        const diff = scores[i] - minScore;
+        if (diff > maxDiff) {
+            maxDiff = diff;
+        }
+        if (scores[i] < minScore) {
+            minScore = scores[i];
         }
     }
 
