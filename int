@@ -22,20 +22,22 @@ function maxDifference(scores) {
         return null;
     }
 
-    let minScore = scores[0];
     let maxDiff = scores[1] - scores[0];
 
-    for (let i = 1; i < scores.length; i++) {
-        if (scores[i] - minScore > maxDiff) {
-            maxDiff = scores[i] - minScore;
-        }
-        if (scores[i] < minScore) {
-            minScore = scores[i];
+    for (let i = 0; i < scores.length; i++) {
+        for (let j = i + 1; j < scores.length; j++) {
+            const diff = scores[j] - scores[i];
+            if (diff > maxDiff) {
+                maxDiff = diff;
+            }
         }
     }
 
     return maxDiff;
 }
+
+const scores = [87, 92, 32, 90, 65, 87];
+console.log(maxDifference(scores)); // Output: 60
 
 const scores = [87, 92, 78, 90, 65, 87];
 console.log(maxDifference(scores)); // Output: 27
