@@ -1,43 +1,44 @@
 Junior Programmer (1-4 years of experience)
 
 Level 1: Coding Test (30 minutes)
-Problem: Implement a function that takes an array of integers as input and returns the maximum difference between any two elements in the array.
+Got it, let's formulate a similar problem:
 
-Sample Input:
+**Problem:**
+You are given an array of integers representing the scores of students in a class. Write a function to find the maximum difference between the scores of any two students in the class.
 
-javascript
-Copy code
-const nums = [7, 1, 5, 3, 6, 4];
-Sample Output:
+**Example:**
+For example, given the array:
 
-javascript
-Copy code
-console.log(maxDifference(nums)); // Output: 5 (Difference between 7 and 1, or 6 and 1)
-Solution:
+`[87, 92, 78, 90, 65, 87]`
 
-javascript
-Copy code
-function maxDifference(arr) {
-    if (!arr || arr.length < 2) {
+The function should return `27`, as the maximum difference between any two scores in the array is `92 - 65 = 27`.
+
+**Solution:**
+Here's a JavaScript function to solve this problem:
+
+```javascript
+function maxDifference(scores) {
+    if (!scores || scores.length < 2) {
         return null;
     }
 
-    let minVal = arr[0];
-    let maxDiff = arr[1] - arr[0];
+    let minScore = scores[0];
+    let maxDiff = scores[1] - scores[0];
 
-    for (let i = 1; i < arr.length; i++) {
-        if (arr[i] - minVal > maxDiff) {
-            maxDiff = arr[i] - minVal;
+    for (let i = 1; i < scores.length; i++) {
+        if (scores[i] - minScore > maxDiff) {
+            maxDiff = scores[i] - minScore;
         }
-        if (arr[i] < minVal) {
-            minVal = arr[i];
+        if (scores[i] < minScore) {
+            minScore = scores[i];
         }
     }
 
     return maxDiff;
 }
 
-console.log(maxDifference([7, 1, 5, 3, 6, 4])); // Output should be 6
+const scores = [87, 92, 78, 90, 65, 87];
+console.log(maxDifference(scores)); // Output: 27
 Level 2: Conceptual Questions (10 minutes)
 
 MongoDB:
