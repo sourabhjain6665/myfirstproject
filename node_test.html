@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node.js Quiz</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .question { margin-bottom: 20px; }
+        .result { margin-top: 20px; font-weight: bold; }
+        .hidden { display: none; }
+        .correct { color: green; }
+        .incorrect { color: red; }
+    </style>
+</head>
+<body>
+    <h1>Node.js Quiz</h1>
+    <form id="quizForm">
+        <!-- Question 1 -->
+        <div class="question">
+            <p>1. How can you handle backpressure in Node.js streams?</p>
+            <label><input type="radio" name="q1" value="By pausing and resuming the stream"> By pausing and resuming the stream</label><br>
+            <label><input type="radio" name="q1" value="By using setTimeout"> By using `setTimeout`</label><br>
+            <label><input type="radio" name="q1" value="By writing data faster"> By writing data faster</label><br>
+            <label><input type="radio" name="q1" value="By closing the stream"> By closing the stream</label><br>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="question">
+            <p>2. In Node.js, what is the event loop, and how does it handle asynchronous operations?</p>
+            <label><input type="radio" name="q2" value="It is a single-threaded loop that handles asynchronous operations by offloading them to worker threads"> It is a single-threaded loop that handles asynchronous operations by offloading them to worker threads</label><br>
+            <label><input type="radio" name="q2" value="It is a multi-threaded loop that handles all operations synchronously"> It is a multi-threaded loop that handles all operations synchronously</label><br>
+            <label><input type="radio" name="q2" value="It is a single-threaded loop that handles asynchronous operations by offloading them to the system's kernel"> It is a single-threaded loop that handles asynchronous operations by offloading them to the system's kernel</label><br>
+            <label><input type="radio" name="q2" value="It is a multi-threaded loop that offloads operations to different threads"> It is a multi-threaded loop that offloads operations to different threads</label><br>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question">
+            <p>3. How would you detect and prevent memory leaks in a Node.js application?</p>
+            <label><input type="radio" name="q3" value="By using the `heapdump` module to analyze memory usage and ensuring proper cleanup of resources"> By using the `heapdump` module to analyze memory usage and ensuring proper cleanup of resources</label><br>
+            <label><input type="radio" name="q3" value="By increasing the heap size limit"> By increasing the heap size limit</label><br>
+            <label><input type="radio" name="q3" value="By using the `fs` module to monitor memory usage"> By using the `fs` module to monitor memory usage</label><br>
+            <label><input type="radio" name="q3" value="By using the `cluster` module to isolate memory"> By using the `cluster` module to isolate memory</label><br>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="question">
+            <p>4. What is the role of the `process` object in Node.js, and how can it be used to manage the application’s environment?</p>
+            <label><input type="radio" name="q4" value="It provides a way to interact with the file system"> It provides a way to interact with the file system</label><br>
+            <label><input type="radio" name="q4" value="It allows interaction with the operating system and provides information about the current process"> It allows interaction with the operating system and provides information about the current process</label><br>
+            <label><input type="radio" name="q4" value="It is used to manage HTTP requests and responses"> It is used to manage HTTP requests and responses</label><br>
+            <label><input type="radio" name="q4" value="It manages the application's memory allocation"> It manages the application's memory allocation</label><br>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="question">
+            <p>5. How can you handle asynchronous errors in Node.js, especially when using Promises or async/await?</p>
+            <label><input type="radio" name="q5" value="By using try/catch blocks around async code and handling Promise rejections with .catch()"> By using `try/catch` blocks around async code and handling Promise rejections with `.catch()`</label><br>
+            <label><input type="radio" name="q5" value="By ignoring the errors, as they will be handled by the event loop"> By ignoring the errors, as they will be handled by the event loop</label><br>
+            <label><input type="radio" name="q5" value="By wrapping all asynchronous code in synchronous functions"> By wrapping all asynchronous code in synchronous functions</label><br>
+            <label><input type="radio" name="q5" value="By using console.log to log the errors"> By using `console.log` to log the errors</label><br>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="question">
+            <p>6. How does Node.js handle file uploads, and how can you ensure that large file uploads do not block the event loop?</p>
+            <label><input type="radio" name="q6" value="By using the `http` module to read the entire file into memory"> By using the `http` module to read the entire file into memory</label><br>
+            <label><input type="radio" name="q6" value="By using streams to handle file uploads in chunks"> By using streams to handle file uploads in chunks</label><br>
+            <label><input type="radio" name="q6" value="By using `setTimeout` to process the file asynchronously"> By using `setTimeout` to process the file asynchronously</label><br>
+            <label><input type="radio" name="q6" value="By using `fs.readFileSync` to read the file synchronously"> By using `fs.readFileSync` to read the file synchronously</label><br>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="question">
+            <p>7. What is the purpose of `TLS`/`SSL` in Node.js, and how is it implemented?</p>
+            <label><input type="radio" name="q7" value="To secure data transmitted over a network by encrypting it using the `tls` module"> To secure data transmitted over a network by encrypting it using the `tls` module</label><br>
+            <label><input type="radio" name="q7" value="To handle file uploads securely"> To handle file uploads securely</label><br>
+            <label><input type="radio" name="q7" value="To manage the file system"> To manage the file system</label><br>
+            <label><input type="radio" name="q7" value="To improve application performance by caching files"> To improve application performance by caching files</label><br>
+        </div>
+
+        <!-- Question 8 -->
+        <div class="question">
+            <p>8. How can you achieve horizontal scaling in a Node.js application?</p>
+            <label><input type="radio" name="q8" value="By using the `cluster` module to fork multiple processes"> By using the `cluster` module to fork multiple processes</label><br>
+            <label><input type="radio" name="q8" value="By increasing the heap size"> By increasing the heap size</label><br>
+            <label><input type="radio" name="q8" value="By using `setImmediate` to process tasks"> By using `setImmediate` to process tasks</label><br>
+            <label><input type="radio" name="q8" value="By reducing the number of processes"> By reducing the number of processes</label><br>
+        </div>
+
+        <!-- Question 9 -->
+        <div class="question">
+            <p>9. In Node.js, what is the purpose of the `EventEmitter` class, and how does it differ from traditional callback patterns?</p>
+            <label><input type="radio" name="q9" value="It provides an object-oriented approach to handling events, allowing multiple listeners for the same event"> It provides an object-oriented approach to handling events, allowing multiple listeners for the same event</label><br>
+            <label><input type="radio" name="q9" value="It only allows a single listener for each event"> It only allows a single listener for each event</label><br>
+            <label><input type="radio" name="q9" value="It does not support asynchronous operations"> It does not support asynchronous operations</label><br>
+            <label><input type="radio" name="q9" value="It is used to handle HTTP requests and responses"> It is used to handle HTTP requests and responses</label><br>
+        </div>
+
+        <!-- Question 10 -->
+        <div class="question">
+            <p>10. What is the purpose of `process.env` in Node.js, and how can it be used to manage environment-specific configurations?</p>
+            <label><input type="radio" name="q10" value="To set environment variables in a Node.js application, which can be accessed across the application"> To set environment variables in a Node.js application, which can be accessed across the application</label><br>
+            <label><input type="radio" name="q10" value="To manage the memory allocation of the application"> To manage the memory allocation of the application</label><br>
+            <label><input type="radio" name="q10" value="To load dependencies and modules"> To load dependencies and modules</label><br>
+            <label><input type="radio" name="q10" value="To configure the event loop behavior"> To configure the event loop behavior</label><br>
+        </div>
+
+        <button type="button" onclick="submitQuiz()">Submit</button>
+        <button type="button" onclick="showAnswers()">Show Answers</button>
+    </form>
+
+    <div id="result" class="result hidden"></div>
+
+    <script>
+        const correctAnswers = {
+            q1: 'By pausing and resuming the stream',
+            q2: 'It is a single-threaded loop that handles asynchronous operations by offloading them to the system\'s kernel',
+            q3: 'By using the `heapdump` module to analyze memory usage and ensuring proper cleanup of resources',
+            q4: 'It allows interaction with the operating system and provides information about the current process',
+            q5: 'By using try/catch blocks around async code and handling Promise rejections with .catch()',
+            q6: 'By using streams to handle file uploads in chunks',
+            q7: 'To secure data transmitted over a network by encrypting it using the `tls` module',
+            q8: 'By using the `cluster` module to fork multiple processes',
+            q9: 'It provides an object-oriented approach to handling events, allowing multiple listeners for the same event',
+            q10: 'To set environment variables in a Node.js application, which can be accessed across the application',
+        };
+
+        function submitQuiz() {
+            let score = 0;
+            let totalQuestions = Object.keys(correctAnswers).length;
+
+            for (let i = 1; i <= totalQuestions; i++) {
+                const questionName = `q${i}`;
+                const userAnswer = document.querySelector(`input[name="${questionName}"]:checked`);
+
+                if (userAnswer && userAnswer.value === correctAnswers[questionName]) {
+                    score++;
+                }
+            }
+
+            const resultDiv = document.getElementById('result');
+            resultDiv.textContent = `Your score is ${score}/${totalQuestions}`;
+            resultDiv.classList.remove('hidden');
+        }
+
+        function showAnswers() {
+            for (let i = 1; i <= Object.keys(correctAnswers).length; i++) {
+                const questionName = `q${i}`;
+                const userAnswer = document.querySelector(`input[name="${questionName}"]:checked`);
+                const correctAnswer = correctAnswers[questionName];
+                
+                if (userAnswer) {
+                    const parent = userAnswer.parentNode;
+                    if (userAnswer.value === correctAnswer) {
+                        parent.innerHTML += ` <span class="correct">(Correct!)</span>`;
+                    } else {
+                        parent.innerHTML += ` <span class="incorrect">(Your answer: ${userAnswer.value})</span><br><span class="correct">Correct answer: ${correctAnswer}</span>`;
+                    }
+                } else {
+                    const firstOption = document.querySelector(`input[name="${questionName}"]`).parentNode;
+                    firstOption.innerHTML += `<br><span class="correct">Correct answer: ${correctAnswer}</span>`;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Quiz</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .question { margin-bottom: 20px; }
+        .result { margin-top: 20px; font-weight: bold; }
+        .hidden { display: none; }
+        .correct { color: green; }
+        .incorrect { color: red; }
+    </style>
+</head>
+<body>
+    <h1>React Quiz</h1>
+    <form id="quizForm">
+        <!-- Question 1 -->
+        <div class="question">
+            <p>1. In React, why might you choose to use `useLayoutEffect` over `useEffect`?</p>
+            <label><input type="radio" name="q1" value="useLayoutEffect fires before the DOM is painted"> `useLayoutEffect` fires before the DOM is painted</label><br>
+            <label><input type="radio" name="q1" value="useLayoutEffect is asynchronous"> `useLayoutEffect` is asynchronous</label><br>
+            <label><input type="radio" name="q1" value="useLayoutEffect is less performant than useEffect"> `useLayoutEffect` is less performant than `useEffect`</label><br>
+            <label><input type="radio" name="q1" value="There is no difference"> There is no difference</label><br>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="question">
+            <p>2. When would you prefer to use a `Portal` in React?</p>
+            <label><input type="radio" name="q2" value="To render content outside the DOM hierarchy of the parent component"> To render content outside the DOM hierarchy of the parent component</label><br>
+            <label><input type="radio" name="q2" value="To optimize performance by preventing re-renders"> To optimize performance by preventing re-renders</label><br>
+            <label><input type="radio" name="q2" value="To pass props down multiple levels"> To pass props down multiple levels</label><br>
+            <label><input type="radio" name="q2" value="To create higher-order components"> To create higher-order components</label><br>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question">
+            <p>3. How does React’s `reconciliation` algorithm handle elements with different keys?</p>
+            <label><input type="radio" name="q3" value="It reuses the existing DOM nodes"> It reuses the existing DOM nodes</label><br>
+            <label><input type="radio" name="q3" value="It replaces the old nodes with new ones"> It replaces the old nodes with new ones</label><br>
+            <label><input type="radio" name="q3" value="It merges the nodes"> It merges the nodes</label><br>
+            <label><input type="radio" name="q3" value="It ignores the nodes with different keys"> It ignores the nodes with different keys</label><br>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="question">
+            <p>4. What is the main benefit of using React’s `Error Boundaries`?</p>
+            <label><input type="radio" name="q4" value="They allow you to catch errors in async code"> They allow you to catch errors in async code</label><br>
+            <label><input type="radio" name="q4" value="They catch errors during rendering, in lifecycle methods, and in constructors"> They catch errors during rendering, in lifecycle methods, and in constructors</label><br>
+            <label><input type="radio" name="q4" value="They prevent the application from crashing"> They prevent the application from crashing</label><br>
+            <label><input type="radio" name="q4" value="They provide performance optimizations"> They provide performance optimizations</label><br>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="question">
+            <p>5. Which of the following is a potential drawback of using the Context API for global state management in large-scale React applications?</p>
+            <label><input type="radio" name="q5" value="Difficulty in passing data"> Difficulty in passing data</label><br>
+            <label><input type="radio" name="q5" value="Prop drilling"> Prop drilling</label><br>
+            <label><input type="radio" name="q5" value="Performance issues due to unnecessary re-renders"> Performance issues due to unnecessary re-renders</label><br>
+            <label><input type="radio" name="q5" value="Increased bundle size"> Increased bundle size</label><br>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="question">
+            <p>6. In a React application, when would you choose to use a `Custom Hook`?</p>
+            <label><input type="radio" name="q6" value="To directly manipulate the DOM"> To directly manipulate the DOM</label><br>
+            <label><input type="radio" name="q6" value="To share logic between components without using HOCs or render props"> To share logic between components without using HOCs or render props</label><br>
+            <label><input type="radio" name="q6" value="To handle side effects"> To handle side effects</label><br>
+            <label><input type="radio" name="q6" value="To improve the performance of components"> To improve the performance of components</label><br>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="question">
+            <p>7. How does React handle updates when using the `shouldComponentUpdate` lifecycle method?</p>
+            <label><input type="radio" name="q7" value="It re-renders the component unconditionally"> It re-renders the component unconditionally</label><br>
+            <label><input type="radio" name="q7" value="It skips rendering the component if shouldComponentUpdate returns false"> It skips rendering the component if `shouldComponentUpdate` returns false</label><br>
+            <label><input type="radio" name="q7" value="It merges the new props with the old ones"> It merges the new props with the old ones</label><br>
+            <label><input type="radio" name="q7" value="It forcibly updates the component"> It forcibly updates the component</label><br>
+        </div>
+
+        <!-- Question 8 -->
+        <div class="question">
+            <p>8. In React, what is the purpose of the `StrictMode` component?</p>
+            <label><input type="radio" name="q8" value="To prevent unsafe lifecycle methods from running"> To prevent unsafe lifecycle methods from running</label><br>
+            <label><input type="radio" name="q8" value="To identify potential problems in an application"> To identify potential problems in an application</label><br>
+            <label><input type="radio" name="q8" value="To enforce strict coding standards"> To enforce strict coding standards</label><br>
+            <label><input type="radio" name="q8" value="To increase the performance of the application"> To increase the performance of the application</label><br>
+        </div>
+
+        <!-- Question 9 -->
+        <div class="question">
+            <p>9. How does React optimize re-renders using `React.PureComponent`?</p>
+            <label><input type="radio" name="q9" value="By shallow comparing the current and next props and state"> By shallow comparing the current and next props and state</label><br>
+            <label><input type="radio" name="q9" value="By deep comparing the current and next props and state"> By deep comparing the current and next props and state</label><br>
+            <label><input type="radio" name="q9" value="By memoizing the component’s output"> By memoizing the component’s output</label><br>
+            <label><input type="radio" name="q9" value="By skipping rendering when props are unchanged"> By skipping rendering when props are unchanged</label><br>
+        </div>
+
+        <!-- Question 10 -->
+        <div class="question">
+            <p>10. Which of the following patterns can be used to implement code-splitting in a React application?</p>
+            <label><input type="radio" name="q10" value="Higher-Order Components"> Higher-Order Components</label><br>
+            <label><input type="radio" name="q10" value="Render Props"> Render Props</label><br>
+            <label><input type="radio" name="q10" value="React.lazy and Suspense"> React.lazy and Suspense</label><br>
+            <label><input type="radio" name="q10" value="Portals"> Portals</label><br>
+        </div>
+
+        <button type="button" onclick="submitQuiz()">Submit</button>
+        <button type="button" onclick="showAnswers()">Show Answers</button>
+    </form>
+
+    <div id="result" class="result hidden"></div>
+
+    <script>
+        const correctAnswers = {
+            q1: '`useLayoutEffect` fires before the DOM is painted',
+            q2: 'To render content outside the DOM hierarchy of the parent component',
+            q3: 'It replaces the old nodes with new ones',
+            q4: 'They catch errors during rendering, in lifecycle methods, and in constructors',
+            q5: 'Performance issues due to unnecessary re-renders',
+            q6: 'To share logic between components without using HOCs or render props',
+            q7: 'It skips rendering the component if `shouldComponentUpdate` returns false',
+            q8: 'To identify potential problems in an application',
+            q9: 'By shallow comparing the current and next props and state',
+            q10: 'React.lazy and Suspense',
+        };
+
+        function submitQuiz() {
+            let score = 0;
+            let totalQuestions = Object.keys(correctAnswers).length;
+
+            for (let i = 1; i <= totalQuestions; i++) {
+                const questionName = `q${i}`;
+                const userAnswer = document.querySelector(`input[name="${questionName}"]:checked`);
+
+                if (userAnswer && userAnswer.value === correctAnswers[questionName]) {
+                    score++;
+                }
+            }
+
+            const resultDiv = document.getElementById('result');
+            resultDiv.textContent = `Your score is ${score}/${totalQuestions}`;
+            resultDiv.classList.remove('hidden');
+        }
+
+        function showAnswers() {
+            for (let i = 1; i <= Object.keys(correctAnswers).length; i++) {
+                const questionName = `q${i}`;
+                const userAnswer = document.querySelector(`input[name="${questionName}"]:checked`);
+                const correctAnswer = correctAnswers[questionName];
+                
+                if (userAnswer) {
+                    const parent = userAnswer.parentNode;
+                    if (userAnswer.value === correctAnswer) {
+                        parent.innerHTML += ` <span class="correct">(Correct!)</span>`;
+                    } else {
+                        parent.innerHTML += ` <span class="incorrect">(Your answer: ${userAnswer.value})</span><br><span class="correct">Correct answer: ${correctAnswer}</span>`;
+                    }
+                } else {
+                    const firstOption = document.querySelector(`input[name="${questionName}"]`).parentNode;
+                    firstOption.innerHTML += `<br><span class="correct">Correct answer: ${correctAnswer}</span>`;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
