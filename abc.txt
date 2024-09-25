@@ -63,3 +63,24 @@ These points should help in clearly outlining why the migration to React is nece
 ---
 
 You can copy and paste these directly into your presentation slides.
+
+
+Here are examples to elaborate on the challenges with WordPress:
+
+---
+
+**Performance Limitations:**
+- **Example**: As the magazine grows in content, WordPress may become slow in rendering pages, especially with dynamic or multimedia-heavy articles, leading to higher load times and a poorer user experience.
+
+**Scalability Issues:**
+- **Example**: Handling a high volume of users simultaneously can cause WordPress to slow down or crash during peak traffic, such as during special events or promotions when large numbers of readers visit the site.
+
+**Plugin Dependencies:**
+- **Example**: The reliance on numerous third-party plugins for features like SEO, image optimization, or caching can lead to compatibility issues, security risks, and increased maintenance, as these plugins may not always be updated or compatible with newer WordPress versions.
+
+**Customization Constraints:**
+- **Example**: Implementing custom interactive elements (like personalized content feeds or real-time notifications) can be challenging and limited within the WordPress framework without extensive modifications or additional plugins, resulting in slower and less efficient feature rollouts.
+
+---
+
+These examples help illustrate the limitations WordPress faces when handling a growing and dynamic magazine application.
